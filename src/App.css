@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-content{
+margin-top: 10%;
+background-color: aliceblue;
 }
 
 .App-logo {

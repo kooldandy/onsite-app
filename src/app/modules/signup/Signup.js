@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextField, Button } from '@material-ui/core';
 //import { SendRounded } from '@material-ui/icons';
+;
 
 export class Signup extends React.Component {
 
@@ -41,6 +42,7 @@ export class Signup extends React.Component {
                 lastName: this.state.signup.lastName,
                 password: this.state.signup.password,
                 email: this.state.signup.email,
+                location: this.state.signup.location,
             })
         };
 
@@ -48,7 +50,8 @@ export class Signup extends React.Component {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-            });
+            })
+            .catch(err => console.error(err));
     }
 
     handleChange = (event) => {
@@ -74,12 +77,14 @@ export class Signup extends React.Component {
                 <div>
                     <TextField id="password" type="password" label="Password" value={this.state.signup.password} onChange={this.handleChange} />
                 </div>
+                
+               
                 <div>
                     <Button variant="contained" color="primary" type="submit" disabled={!this.isFormValid}>
                         SignUp
                     </Button>
                 </div>
-            </form>
+                </form>
         )
     }
 }
